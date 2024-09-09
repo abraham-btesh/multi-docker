@@ -14,12 +14,8 @@ after_success:
   - docker build -t btesh/multi-nginx ./nginx
   - docker build -t btesh/multi-server ./server
   - docker build -t btesh/multi-worker ./worker
-
   # Log in to the docker cli
-
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-
-  
   # take those images and push them to the docker hub
   - docker push btesh/multi-client
   - docker push btesh/multi-nginx
